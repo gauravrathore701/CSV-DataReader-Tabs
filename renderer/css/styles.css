@@ -1,0 +1,139 @@
+body {
+  padding: 0;
+  margin: 20px;
+  background-color: #212529;
+  color: #e9ecef;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.left-container {
+  padding: 5px;
+  width: 30%;
+  height: 100vh;
+  background-color: #495057;
+}
+
+.right-container {
+  padding: 5px;
+  width: 70%;
+  height: 100vh;
+  background-color: #343a40;
+}
+
+.upload-container {
+  text-align: center;
+  padding-top: 40px;
+  width: 90%;
+  height: 160px;
+  background-color: #adb5bd;
+  cursor: pointer;
+  border: 2px dotted black;
+}
+
+.upload-container.active {
+  border-style: solid;
+  border-color: black;
+}
+
+.tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid black;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ced4da;
+  margin-right: 2px;
+  border-radius: 5px;
+}
+
+.cross {
+  margin-left: 20px;
+  margin-right: 0;
+  color: #212529;
+  border: 2px solid #212529;
+  border-radius: 50px;
+  padding: 2px;
+}
+
+.tab-item.active {
+  background-color: #adb5bd;
+  border-bottom: 5px solid #dee2e6;
+}
+
+.tab-content {
+  padding: 20px;
+  overflow: auto;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+#add-tabs {
+  width: 40px;
+  height: 100%;
+  font-size: larger;
+}
+
+td {
+  border: 2px solid #ced4da;
+}
+
+.close-tab {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+  color: #212529;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}

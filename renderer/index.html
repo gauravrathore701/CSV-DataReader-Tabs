@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'" />
+    <title>Tab Feature</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>CSV Reader</h1>
+    <div class="container">
+      <div class="left-container">
+        <div class="upload-container" id="upload-container">
+          <input type="file" id="file-input" hidden />
+          <p class="clickable">Click to upload</p>
+          <p>Drop your files here.</p>
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="tabs">
+          <ul class="tab-list">
+            <li></li>
+            <li><button id="add-tabs">+</button></li>
+          </ul>
+          <div class="tab-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="searchPopup" class="popup">
+      <div class="popup-content">
+        <span id="closePopup" class="close-btn">&times;</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search..."
+          class="searchBox"
+        />
+        <button class="speakButton">Speak</button>
+      </div>
+    </div>
+    <script src="js/renderer.js"></script>
+  </body>
+</html>
