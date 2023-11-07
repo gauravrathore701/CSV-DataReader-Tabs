@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>CSV Reader</h1>
+    <h1 class="heading">CSV Reader</h1>
     <div class="container">
       <div class="left-container">
         <div class="upload-container" id="upload-container">
           <input type="file" id="file-input" hidden />
+          <img
+            src="wired-flat-120-folder.png"
+            alt="Upload file"
+            class="upload-icon" />
           <p class="clickable">Click to upload</p>
           <p>Drop your files here.</p>
         </div>
@@ -35,8 +39,7 @@
           type="text"
           id="searchInput"
           placeholder="Search..."
-          class="searchBox"
-        />
+          class="searchBox" />
         <button class="speakButton">Speak</button>
       </div>
     </div>
