@@ -9,6 +9,7 @@ const searchPopup = document.getElementById("searchPopup");
 const closePopup = document.getElementById("closePopup");
 const speakButton = document.querySelector(".speakButton");
 const searchBox = document.querySelector(".searchBox");
+const GLBButton = document.querySelector("#GLBViewer");
 
 //Additional Variable
 
@@ -23,6 +24,17 @@ function changeTab(index) {
   // Activating the selected tab and its content
   tabItems[index].classList.add("active");
   tabPanes[index].classList.add("active");
+}
+
+function openGlbViewer() {
+  addTabFucntion();
+  const newTabContent = document.querySelector(".tab-pane.active");
+
+  let iFrame = document.createElement("iframe");
+  newTabContent.appendChild(iFrame);
+  iFrame.classList.add("myiFrame");
+
+  iFrame.src = "GLBViewer/index.html";
 }
 
 function addTabFucntion() {
@@ -41,10 +53,6 @@ function addTabFucntion() {
   newTab.appendChild(textNode);
   newTab.appendChild(closeButton);
   tabList.insertBefore(newTab, tabList.children[index]);
-
-  newTabContent.textContent = `Content for tab ${
-    index + 1
-  } will be visible here...`;
 
   closeButton.classList.add("close-tab");
   newTab.classList.add("tab-item");
@@ -172,30 +180,8 @@ addTabs.addEventListener("click", () => {
   addTabFucntion();
 });
 
-// Speak Button Code Toggle Method
-let sr = window.webkitSpeechRecognition || window.SpeechRecognition;
-let spRec = new sr();
-spRec.continuous = true;
-spRec.interimResults = true;
-spRec.onresult = (res) => {
-  let text = Array.from(res.results)
-    .map((r) => r[0])
-    .map((txt) => txt.transcript)
-    .join("");
-  searchBox.value = text;
-  console.log(text);
-};
-let c = 0;
-speakButton.addEventListener("click", () => {
-  if (c == 0) {
-    spRec.start();
-    console.log("test-0");
-    c = 1;
-  } else {
-    spRec.stop();
-    console.log("test-1");
-    c = 0;
-  }
+GLBButton.addEventListener("click", () => {
+  openGlbViewer();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -215,3 +201,31 @@ document.addEventListener("keydown", (event) => {
     searchPopup.style.display = "block";
   }
 });
+
+// Speak Button Code Toggle Method
+/*let sr = window.webkitSpeechRecognition || window.SpeechRecognition;
+let spRec = new sr();
+spRec.continuous = true;
+spRec.interimResults = true;
+
+let c = 0;
+speakButton.addEventListener("click", () => {
+  if (c == 0) {
+    spRec.onresult = (res) => {
+      let text = Array.from(res.results)
+        .map((r) => r[0])
+        .map((txt) => txt.transcript)
+        .join("");
+      searchBox.value = text;
+      console.log(text);
+    };
+    spRec.start();
+    console.log("test-0");
+    c = 1;
+  } else {
+    spRec.stop();
+    console.log("test-1");
+    c = 0;
+  }
+});
+*/

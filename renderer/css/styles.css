@@ -200,3 +200,8 @@ td {
     width: 90%;
   }
 }
+
+.myiFrame {
+  height: 480px;
+  width: 720px;
+}
